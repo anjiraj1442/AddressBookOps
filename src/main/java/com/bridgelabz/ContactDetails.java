@@ -1,9 +1,5 @@
 package com.bridgelabz;
-/*
-Declaring The ContactDetails Class
-And Declaring The Variables
-And Defining The Getter And Setter Method
- */
+
 
 
 public class ContactDetails {
