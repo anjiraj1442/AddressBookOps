@@ -18,16 +18,25 @@ public class AddressBookMain {
         Scanner sc = new Scanner(System.in);
         NewAddressBook person = new NewAddressBook();
         person.addContact();
-        System.out.println("Enter Y To Edit The Contact");
-        String op = sc.nextLine();
+        System.out.println(person.newPerson);
+        System.out.println("Enter the choice \n 1. Edit \n 2. Delete");
+        int option = sc.nextInt();
+        switch (option){
+            case 1:
+                person.editContact();
+                System.out.println("You have Entered following data");
+                System.out.println(person.newPerson);
+                System.out.println("Thank you for Using the Address book");
+                break;
 
-        if (op.equals("y") || op.equals("Y")) {
-            person.editContact();
-            System.out.println("You have Entered following data");
-            System.out.println("The Contact Details After Editing : " + person);
+            case 2:
+                person.deleteContact();
+                System.out.println("Address Book details :" + person.newPerson);
+                break;
+        }
         }
     }
-}
+
 
 
 
