@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class AddressBook {
-     /*
+    /*
    Declaring The Add Contact Method
    And Entering The Contact Details By Using Scanner Class
    And Printing The Contact Details Of Person
@@ -180,7 +180,7 @@ public class AddressBook {
         }
     }
 
-    public void searchByOptions() {
+    public void viewByOptions() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Enter\n 1. By name\n 2. By city\n 3. By state\n 4. for previous menu");
@@ -190,17 +190,17 @@ public class AddressBook {
                 case 1:
                     System.out.println("Enter name: ");
                     String name = scanner.nextLine();
-                    contactDetailsList.forEach(book -> searchByName(name));
+                    searchByName(name);
                     break;
                 case 2:
                     System.out.println("Enter city: ");
                     String city = scanner.nextLine();
-                    contactDetailsList.forEach(book -> searchByCity(city));
+                    searchByCity(city);
                     break;
                 case 3:
                     System.out.println("Enter state: ");
                     String state = scanner.nextLine();
-                    contactDetailsList.forEach(book -> searchByState(state));
+                    System.out.println(state);
                     break;
                 case 4:
                     return;
