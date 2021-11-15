@@ -18,8 +18,17 @@ public class AddressBook {
         System.out.println("Enter the number of contacts you want to enter");
         int number = scanner.nextInt();
         for (int i = 0; i < number; i++) {
-            System.out.println("Enter the contact details of person ");
-            writeContact();
+
+//            checking the duplicate contact by contact name.
+            System.out.println("Enter the first name of person");
+            String fName = scanner.next();
+            if (fName.equals(person.getFirstName())) {
+                System.out.println("The entered person is already exist.");
+            } else {
+                System.out.println("Enter the contact details of person ");
+                writeContact();
+                System.out.println("contact added Successfully");
+            }
         }
     }
     public void writeContact() {
