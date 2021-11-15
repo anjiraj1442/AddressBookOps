@@ -7,46 +7,51 @@ import java.util.Scanner;
  *
  * @author : Anji Raj Ardula
  * @version : 16.0
- * @since : 09/10/2021
+ * @since : 15/1/2021
  */
 
 public class AddressBookMain {
-
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to Address Book Problem \n");
-        Scanner sc = new Scanner(System.in);
-
-        NewAddressBook person = new NewAddressBook();
+    public void choose() {
+        MultipleAddressBooks obj = new MultipleAddressBooks();
         while (true) {
-            System.out.println("Enter the choice \n 1.add \n 2.edit \n 3.delete");
-            int option = sc.nextInt();
-
-            switch (option) {
+            System.out.println("Enter \n 1. To add The new AddressBook\n 2. To add contact in AddressBook\n " +
+                    "3. To edit the contact in AddressBook\n 4. To delete the contact in AddressBook\n 5. To delete the AddressBook\n " +
+                    "6. To Print the AddressBook\n 7. To Print the contacts in AddressBook\n 0. to exit");
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
+            switch (choice) {
                 case 1:
-                    System.out.println("Enter no of contacts you want create in list");
-                    int choose = sc.nextInt();
-                    for (int i = 0; i < choose; i++) {
-                        person.addContact();
-                    }
+                    obj.addAddressBook();
                     break;
-
                 case 2:
-                    person.editContact();
-                    System.out.println("You have Entered following data");
-                    System.out.println(person.newPerson);
-                    System.out.println("Thank you for Using the Address book");
+                    obj.addContact();
                     break;
-
                 case 3:
-                    person.deleteContact();
-                    System.out.println("Address Book details :" + person.newPerson);
+                    obj.editContactInBook();
+                    break;
+                case 4:
+                    obj.deleteContactInBook();
+                    break;
+                case 5:
+                    obj.deleteAddressBook();
+                    break;
+                case 6:
+                    obj.printBook();
+                    break;
+                case 7:
+                    obj.printContactsInBook();
+                    break;
+                case 0:
+                    System.exit(0);
                     break;
                 default:
-
-                    System.out.println("Enter correct the choice");
+                    System.out.println("Enter the wrong input");
             }
         }
+    }
+    public static void main(String[] args) {
+        AddressBookMain addressBookMain = new AddressBookMain();
+        addressBookMain.choose();
     }
 }
 
